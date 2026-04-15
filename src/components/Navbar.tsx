@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/protomotive-logo.png";
+import logo from "@/assets/Vector1.png";
+import logo1 from "@/assets/logo1.png";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
@@ -23,12 +24,15 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass border-b border-border shadow-lg" : "bg-transparent"
+        "glass border-b border-border shadow-lg"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <a href="#hero" className="flex items-center gap-2">
-          <img src={logo} alt="Protomotive" className="h-10 w-auto" />
+             <div className="flex items-center gap-2">
+              <img src={logo} alt="Protomotive" className="h-10 w-auto" />
+              <img src={logo1} alt="Protomotive" className="h-10 w-auto" />
+            </div>
         </a>
 
         {/* Desktop */}
@@ -37,14 +41,14 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wide uppercase font-body"
+              className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors tracking-widest uppercase font-heading"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#booking"
-            className="bg-gradient-cyan text-accent-foreground px-5 py-2.5 rounded-lg text-sm font-semibold font-body hover:opacity-90 transition-opacity"
+            className="bg-gradient-cyan text-accent-foreground px-5 py-2.5 rounded-lg text-xs font-semibold font-heading uppercase tracking-wider hover:opacity-90 transition-opacity"
           >
             Book Now
           </a>
@@ -69,7 +73,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wide font-body"
+                className="text-xs font-medium text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest font-heading"
               >
                 {link.label}
               </a>
@@ -77,7 +81,7 @@ const Navbar = () => {
             <a
               href="#booking"
               onClick={() => setMobileOpen(false)}
-              className="bg-gradient-cyan text-accent-foreground px-6 py-2.5 rounded-lg text-sm font-semibold font-body"
+              className="bg-gradient-cyan text-accent-foreground px-6 py-2.5 rounded-lg text-xs font-semibold font-heading uppercase tracking-wider"
             >
               Book Now
             </a>

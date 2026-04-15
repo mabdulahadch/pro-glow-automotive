@@ -45,12 +45,12 @@ const Services = () => {
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Our <span className="text-gradient">Services</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto font-body">
+          <p className="text-muted-foreground max-w-xl mx-auto font-heading">
             Premium auto care services tailored for every vehicle
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="font-heading grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <ServiceCard key={service.title} {...service} index={i} />
           ))}

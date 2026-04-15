@@ -1,15 +1,25 @@
 import { Instagram } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import img1 from "@/assets/img1.jpeg";
+import img2 from "@/assets/img2.jpeg"
+import img3 from "@/assets/img3.jpeg"
+import img4 from "@/assets/img4.png"
+import img5 from "@/assets/img5.png"
+import img6 from "@/assets/img6.jpeg"
+import img7 from "@/assets/img7.jpeg"
 
 const galleryItems = [
-  { h: "h-64", bg: "hsl(204 40% 18%)" },
-  { h: "h-80", bg: "hsl(210 30% 14%)" },
-  { h: "h-56", bg: "hsl(197 50% 20%)" },
-  { h: "h-72", bg: "hsl(220 25% 12%)" },
-  { h: "h-60", bg: "hsl(204 45% 16%)" },
-  { h: "h-76", bg: "hsl(215 35% 15%)" },
-  { h: "h-68", bg: "hsl(200 40% 18%)" },
-  { h: "h-52", bg: "hsl(204 50% 22%)" },
+  { h: "h-64", bg: img3 },
+  { h: "h-80", bg: img2 },
+
+  { h: "h-80", bg: img1 },
+  { h: "h-64", bg: img4 },
+
+  { h: "h-64", bg: img7 },
+  { h: "h-80", bg: img6 },
+
+  { h: "h-64", bg: img2 },
+  { h: "h-80", bg: img5 },
 ];
 
 const Gallery = () => {
@@ -47,12 +57,27 @@ const Gallery = () => {
               }`}
               style={{ background: item.bg, transitionDelay: `${i * 80}ms` }}
             >
-              <div className="absolute inset-0 flex items-center justify-center font-heading text-foreground/10 text-sm">
+
+              <img
+                src={item.bg}
+                alt={`Protomotive work ${i + 1}`}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+
+ <div className="absolute inset-0 bg-black/20" />
+
+              {/* Hover overlay with Instagram icon */}
+              <div className="absolute inset-0 bg-gradient-cyan opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
+                <Instagram size={32} className="text-accent-foreground" />
+              </div>
+
+
+              {/* <div className="absolute inset-0 flex items-center justify-center font-heading text-foreground/10 text-sm">
                 PROTOMOTIVE
               </div>
               <div className="absolute inset-0 bg-gradient-cyan opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center">
                 <Instagram size={32} className="text-accent-foreground" />
-              </div>
+              </div> */}
             </a>
           ))}
         </div>

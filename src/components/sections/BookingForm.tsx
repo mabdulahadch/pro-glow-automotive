@@ -42,7 +42,7 @@ const BookingForm = () => {
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Book an <span className="text-gradient">Appointment</span>
           </h2>
-          <p className="text-muted-foreground font-body max-w-md mx-auto">
+          <p className="text-muted-foreground font-heading text-xs uppercase tracking-widest max-w-md mx-auto">
             Fill in your details and we'll get back to you via WhatsApp
           </p>
         </div>
@@ -53,30 +53,30 @@ const BookingForm = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="bg-secondary border-border text-foreground placeholder:text-muted-foreground h-12 font-body"
+            className="bg-secondary border-border text-foreground placeholder:text-muted-foreground h-12 font-heading text-xs uppercase tracking-widest"
           />
           <Input
             placeholder="Phone Number"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             required
-            className="bg-secondary border-border text-foreground placeholder:text-muted-foreground h-12 font-body"
+            className="bg-secondary border-border text-foreground placeholder:text-muted-foreground h-12 font-heading text-xs uppercase tracking-widest"
           />
           <Input
             placeholder="Car Model (e.g. Toyota Corolla 2023)"
             value={carModel}
             onChange={(e) => setCarModel(e.target.value)}
             required
-            className="bg-secondary border-border text-foreground placeholder:text-muted-foreground h-12 font-body"
+            className="bg-secondary border-border text-foreground placeholder:text-muted-foreground h-12 font-heading text-xs uppercase tracking-widest"
           />
 
           <Select value={service} onValueChange={setService} required>
-            <SelectTrigger className="bg-secondary border-border text-foreground h-12 font-body">
+            <SelectTrigger className="bg-secondary border-border text-foreground h-12 font-heading text-xs uppercase tracking-widest">
               <SelectValue placeholder="Select Service" />
             </SelectTrigger>
             <SelectContent className="bg-card border-border">
               {services.map((s) => (
-                <SelectItem key={s} value={s} className="font-body">{s}</SelectItem>
+                <SelectItem key={s} value={s} className="font-heading text-xs uppercase tracking-widest">{s}</SelectItem>
               ))}
             </SelectContent>
           </Select>
@@ -86,7 +86,7 @@ const BookingForm = () => {
               <Button
                 variant="outline"
                 className={cn(
-                  "w-full justify-start text-left font-body bg-secondary border-border h-12",
+                  "w-full justify-start text-left font-heading text-xs uppercase tracking-widest bg-secondary border-border h-12",
                   !date && "text-muted-foreground"
                 )}
               >
@@ -108,7 +108,7 @@ const BookingForm = () => {
 
           <Button
             type="submit"
-            className="w-full h-12 bg-gradient-cyan text-accent-foreground font-semibold font-body text-sm tracking-wide hover:opacity-90 transition-opacity glow-cyan"
+            className="w-full h-12 bg-gradient-cyan text-accent-foreground font-semibold font-heading text-xs tracking-widest uppercase hover:opacity-90 transition-opacity glow-cyan"
           >
             <Send size={16} className="mr-2" />
             Schedule My Visit

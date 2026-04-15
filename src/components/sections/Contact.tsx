@@ -17,10 +17,14 @@ const Contact = () => {
           {/* Map */}
           <div className="rounded-xl overflow-hidden border border-border h-80 lg:h-auto">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.5!2d74.4089!3d31.4697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDI4JzEwLjkiTiA3NMKwMjQnMzIuMCJF!5e0!3m2!1sen!2s!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6805!2d74.40888!3d31.46972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190fbad2bf4091%3A0x9246a6273a20c429!2sPROTOMOTIVE!5e0!3m2!1sen!2s!4v1776245562028!5m2!1sen!2s"
               width="100%"
               height="100%"
-              style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+              style={{
+                border: 0,
+                filter: "invert(90%) hue-rotate(180deg)",
+                borderRadius: "inherit"
+              }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

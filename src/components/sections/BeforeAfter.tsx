@@ -1,9 +1,12 @@
 import { useState, useRef, useCallback } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import before1 from "@/assets/b2.png";
+import after1 from "@/assets/a1.png";
+
 
 const comparisons = [
   { label: "Ceramic Coating", before: "hsl(220 20% 15%)", after: "hsl(204 66% 30%)" },
-  { label: "Paint Correction", before: "hsl(220 20% 12%)", after: "hsl(204 60% 35%)" },
+  { label: "Paint Correction", before: before1, after: after1 },
   { label: "Interior Detailing", before: "hsl(220 15% 18%)", after: "hsl(197 70% 32%)" },
   { label: "Full Restoration", before: "hsl(220 25% 10%)", after: "hsl(204 66% 28%)" },
 ];
@@ -38,6 +41,12 @@ const ComparisonSlider = ({ label, before, after }: { label: string; before: str
       >
         {/* Before */}
         <div className="absolute inset-0 flex items-center justify-center" style={{ background: before }}>
+          <img
+            src={before}
+            alt="Before"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
           <span className="font-heading text-foreground/30 text-xl">BEFORE</span>
         </div>
         {/* After */}
@@ -45,6 +54,15 @@ const ComparisonSlider = ({ label, before, after }: { label: string; before: str
           className="absolute inset-0 flex items-center justify-center"
           style={{ background: after, clipPath: `inset(0 0 0 ${position}%)` }}
         >
+
+          <img
+  src={after}
+  alt="After"
+  className="absolute inset-0 w-full h-full object-cover"
+  style={{ clipPath: `inset(0 0 0 ${position}%)` }}
+/>
+
+
           <span className="font-heading text-foreground/60 text-xl">AFTER</span>
         </div>
         {/* Slider line */}

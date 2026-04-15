@@ -1,5 +1,6 @@
 import { Instagram } from "lucide-react";
-import logo from "@/assets/protomotive-logo.png";
+import logo from "@/assets/Vector1.png";
+import logo1 from "@/assets/logo1.png";
 
 const Footer = () => {
   return (
@@ -8,8 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           {/* Logo */}
           <div>
-            <img src={logo} alt="Protomotive" className="h-10 mb-4" />
-            <p className="text-sm text-muted-foreground font-body">
+            <div className="flex items-center gap-2">
+              <img src={logo} alt="Protomotive" className="h-10 mb-4" />
+              <img src={logo1} alt="Protomotive" className="h-10 mb-4" />
+            </div>
+            <p className="text-sm text-muted-foreground font-heading">
               Premium car detailing & auto care centre in DHA Phase 8, Lahore.
             </p>
           </div>
@@ -22,7 +26,7 @@ const Footer = () => {
                 <a
                   key={link}
                   href={`#${link.toLowerCase()}`}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body"
+                  className="text-xs text-muted-foreground hover:text-foreground transition-colors font-heading"
                 >
                   {link === "Booking" ? "Book Appointment" : link}
                 </a>
