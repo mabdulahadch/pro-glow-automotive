@@ -10,22 +10,11 @@ import BookingForm from "@/components/sections/BookingForm";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
-// import Pointer from "@/components/Pointer";
 import { useEffect, useRef, useState} from "react";
 
 import carBg from "@/assets/car.png";
 
 const Index = () => {
-  // const [pos, setPos] = useState({ x: 0, y: 0 });
-
-  // useEffect(() => {
-  //   const handleMove = (e) => {
-  //     setPos({ x: e.clientX, y: e.clientY });
-  //   };
-
-  //   window.addEventListener("mousemove", handleMove);
-  //   return () => window.removeEventListener("mousemove", handleMove);
-  // }, []);
 
 
 
@@ -112,28 +101,34 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
       {/* Global Particle Canvas */}
 
-
-        {/* <Pointer x={pos.x} y={pos.y} /> */}
-
-         <div
-        className="absolute inset-0 z-0"
-        style={{
-          background: `
-            linear-gradient(
-              to bottom,
-              rgba(18, 38, 66, 0.85) 0%,
-              rgba(3,8,15,0.7) 40%,
-              rgba(3,8,15,0.95) 100%
-            ),
-            url(${carBg})
-          `,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          filter: "brightness(1) contrast(1.1)",
-        }}
-      />
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Image Layer - Invisible on Mobile (Back Layer) */}
+        <div
+          className="absolute inset-0 z-0 hidden md:block"
+          style={{
+            backgroundImage: `url(${carBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
+            filter: "brightness(1) contrast(1.1)",
+          }}
+        />
+        {/* Gradient Layer (Front Layer) */}
+        <div
+          className="absolute inset-0 z-10"
+          style={{
+            background: `
+              linear-gradient(
+                to bottom,
+                rgba(18, 38, 66, 0.85) 0%,
+                rgba(3,8,15,0.7) 40%,
+                rgba(3,8,15,0.95) 100%
+              )
+            `,
+          }}
+        />
+      </div>
 
       <canvas 
         ref={canvasRef} 
